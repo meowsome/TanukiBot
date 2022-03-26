@@ -1,3 +1,10 @@
 tweepy==4.6.0
 python-dotenv==0.19.2
 schedule==1.1.0
+pandas==1.4.0
+tensorflow==2.8.0
+python-magic-bin==0.4.14
+numpy==1.22.1
+tqdm==4.63.0
+boto3==1.21.22
+git+https://github.com/Joeclinton1/google-images-download.git@ce512d9#egg=google-images-download
