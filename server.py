@@ -1,10 +1,17 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from scrape.scrape_images import scrape_images
 from posting.post_image import post_image
+from pathlib import Path
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+directory = "tmp"
+Path(directory).mkdir(parents=True, exist_ok=True)
+Path(f"{directory}/bad").mkdir(parents=True, exist_ok=True)
+Path(f"{directory}/thumbs").mkdir(parents=True, exist_ok=True)
+Path(f"{directory}/pending_post").mkdir(parents=True, exist_ok=True)
 
 sched = BlockingScheduler()
 
