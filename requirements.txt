@@ -1,6 +1,6 @@
 tweepy==4.6.0
 python-dotenv==0.19.2
-schedule==1.1.0
+APScheduler==3.9.1
 pandas==1.4.0
 tensorflow-cpu==2.8.0
 python-magic==0.4.15

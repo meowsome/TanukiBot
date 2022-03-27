@@ -23,3 +23,4 @@ Scrapes Twitter and Google for Tanuki images, filters images using ML, saves to 
 | ACCESS_TOKEN | From [tools/generate_access_token.py](tools/generate_access_token.py) |
 | ACCESS_TOKEN_SECRET | From [tools/generate_access_token.py](tools/generate_access_token.py) |
 | DEV_ENVIRONMENT_LABEL | From Twitter Dev Portal > Products > Premium > Dev Environments > Choose one |
+| POSTING_TIME_UTC | Integer, time in UTC to run the posting job at |
