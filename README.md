@@ -4,7 +4,7 @@ Scrapes Twitter and Google for Tanuki images, filters images using ML, saves to 
 
 ## Installation
 
-1. `pip install -r requirements.python.txt`
+1. `pip install -r requirements.txt`
 2. `cd google-images-download`
 3. `python setup.py install`
 4. `cd ..`
