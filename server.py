@@ -15,7 +15,7 @@ Path(f"{directory}/pending_post").mkdir(parents=True, exist_ok=True)
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('cron', day_of_week='*', hour=os.getenv("POSTING_TIME_UTC"))
+@sched.scheduled_job('cron', hour=os.getenv("POSTING_TIME_UTC"))
 def post_image_schedule():
     post_image()
 
