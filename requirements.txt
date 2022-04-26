@@ -1,4 +1,4 @@
-tweepy==4.6.0
+git+https://github.com/tweepy/tweepy.git@2da4452#egg=tweepy
 python-dotenv==0.19.2
 APScheduler==3.9.1
 pandas==1.4.0
