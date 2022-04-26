@@ -13,7 +13,21 @@ def post_image():
     image_path = get_image()
 
     print("Posting image")
-    api.update_status_with_media(filename=image_path, status=None)
+    if not ".mp4" in image_path:
+        # Upload image
+        api.update_status_with_media(filename=image_path, status=None)
+    else:
+        # Upload video
+        response_media_upload = api.media_upload(
+            filename = image_path,
+            chunked = True,
+            media_category = "tweet_video"
+        )
+
+        api.update_status(
+            status = None,
+            media_ids = [response_media_upload.media_id]
+        )
 
     print("Removing image")
     os.remove(image_path)
