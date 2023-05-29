@@ -8,8 +8,13 @@ Scrapes Twitter and Google for Tanuki images, filters images using ML, saves to 
 2. `cd google-images-download`
 3. `python setup.py install`
 4. `cd ..`
-5. `python server.py`
-6. `mkdir tmp tmp/bad tmp/thumbs tmp/pending_post`
+5.`mkdir tmp tmp/bad tmp/thumbs tmp/pending_post`
+6. `python server.py`
+7. Complete the auth prompts to get the server running
+
+## If running without server:
+
+Ensure to run tools/generate_access_token_v2.py to populate token.json before running the ipynb file.
 
 ## .env file
 

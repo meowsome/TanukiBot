@@ -2,32 +2,36 @@ import os
 import tweepy
 from .get_random_image import get_image
 from dotenv import load_dotenv
+from tools.generate_access_token_v2 import fetch_client
 load_dotenv()
 
+# v1 auth
 auth = tweepy.OAuthHandler(os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET")) 
 auth.set_access_token(os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET"))
 api = tweepy.API(auth)
+
+# v2 auth
+client = fetch_client()
 
 def post_image():
     print("Downloading random image")
     image_path = get_image()
 
     print("Posting image")
-    if not ".mp4" in image_path:
-        # Upload image
-        api.update_status_with_media(filename=image_path, status=None)
-    else:
-        # Upload video
-        response_media_upload = api.media_upload(
-            filename = image_path,
-            chunked = True,
-            media_category = "tweet_video"
-        )
 
-        api.update_status(
-            status = None,
-            media_ids = [response_media_upload.media_id]
-        )
+    is_video = ".mp4" in image_path
+
+    response_media_upload = api.media_upload(
+        filename=image_path,
+        chunked=is_video,
+        media_category="tweet_video" if is_video else "tweet_image"
+    )
+
+    client.create_tweet(
+        text=None,
+        user_auth=False,
+        media_ids=[response_media_upload.media_id]
+    )
 
     print("Removing image")
     os.remove(image_path)
