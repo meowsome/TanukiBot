@@ -4,11 +4,11 @@ from posting.post_image import post_image
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-from tools.generate_access_token_v2 import fetch_new_creds
+# from tools.generate_access_token_v2 import fetch_new_creds
 
 load_dotenv()
 
-fetch_new_creds()
+# fetch_new_creds()
 
 def create_directory():
     directory = "tmp"
