@@ -23,9 +23,11 @@ Ensure to run tools/generate_access_token_v2.py to populate token.json before ru
 | AWS_ACCESS_KEY_ID | From Access Keys at https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1&skipRegion=true#/security_credentials |
 | AWS_SERVER_SECRET_KEY | From Access Keys at https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1&skipRegion=true#/security_credentials |
 | AWS_BUCKET_NAME | Name of your AWS bucket |
-| CONSUMER_KEY | From Twitter Dev Portal > Projects & Apps > Standalone Apps > Your app > Keys and Tokens > Consumer Keys |
-| CONSUMER_SECRET | From Twitter Dev Portal > Projects & Apps > Standalone Apps > Your app > Keys and Tokens > Consumer Keys |
+| CONSUMER_KEY | From Twitter Dev Portal > Projects & Apps > Projects > Your app > Keys and Tokens > Consumer Keys |
+| CONSUMER_SECRET | From Twitter Dev Portal > Projects & Apps > Projects > Your app > Keys and Tokens > Consumer Keys |
 | ACCESS_TOKEN | From [tools/generate_access_token.py](tools/generate_access_token.py) |
 | ACCESS_TOKEN_SECRET | From [tools/generate_access_token.py](tools/generate_access_token.py) |
-| DEV_ENVIRONMENT_LABEL | From Twitter Dev Portal > Products > Premium > Dev Environments > Choose one |
 | POSTING_TIME_UTC | Integer, time in UTC to run the posting job at |
+| REDIRECT_URL | From Twitter Dev Portal > Projects & Apps > Projects > Your App > User authentication settings > Edit > Callback URI |
+| CLIENT_ID | From Twitter Dev Portal > Projects & Apps > Projects > Your App > Keys and Tokens > OAuth 2.0 Client ID and Client Secret |
+| CLIENT_SECRET | From Twitter Dev Portal > Projects & Apps > Projects > Your App > Keys and Tokens > OAuth 2.0 Client ID and Client Secret |
