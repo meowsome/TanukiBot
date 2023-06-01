@@ -10,10 +10,11 @@ auth = tweepy.OAuthHandler(os.getenv("CONSUMER_KEY"), os.getenv("CONSUMER_SECRET
 auth.set_access_token(os.getenv("ACCESS_TOKEN"), os.getenv("ACCESS_TOKEN_SECRET"))
 api = tweepy.API(auth)
 
-# v2 auth
-client = fetch_client()
-
 def post_image():
+    # v2 auth
+    print('fetch client')
+    client = fetch_client()
+
     print("Downloading random image")
     image_path = get_image()
 

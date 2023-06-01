@@ -1,5 +1,5 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from scrape.scrape_images import scrape_images
+# from scrape.scrape_images import scrape_images
 from posting.post_image import post_image
 from pathlib import Path
 import os
@@ -24,10 +24,10 @@ def post_image_schedule():
     create_directory()
     post_image()
 
-@sched.scheduled_job('cron', day=1)
-def scrape_images_schedule():
-    create_directory()
-    scrape_images()
+# @sched.scheduled_job('cron', day=1)
+# def scrape_images_schedule():
+#     create_directory()
+#     scrape_images()
 
 try:
     sched.start()
