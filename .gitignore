@@ -4,3 +4,4 @@ tmp
 notebooks
 **/__pycache__
 token.json
+venv/

@@ -7,4 +7,4 @@ python-magic==0.4.15
 numpy==1.22.1
 tqdm==4.63.0
 boto3==1.21.22
-git+https://github.com/Joeclinton1/google-images-download.git@ce512d9#egg=google-images-download
+atproto==0.0.61

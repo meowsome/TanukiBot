@@ -1,14 +1,11 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-# from scrape.scrape_images import scrape_images
-from posting.post_image import post_image
+from posting.post_image import post_image_twitter, post_image_bsky
+from posting.get_random_image import get_image
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-# from tools.generate_access_token_v2 import fetch_new_creds
 
 load_dotenv()
-
-# fetch_new_creds()
 
 def create_directory():
     directory = "tmp"
@@ -22,14 +19,14 @@ sched = BlockingScheduler()
 @sched.scheduled_job('cron', hour=os.getenv("POSTING_TIME_UTC"))
 def post_image_schedule():
     create_directory()
-    post_image()
 
-# @sched.scheduled_job('cron', day=1)
-# def scrape_images_schedule():
-#     create_directory()
-#     scrape_images()
+    print("Downloading random image")
+    image = get_image()
+    # post_image_twitter(image)
+    post_image_bsky(image)
 
 try:
+    print("Starting scheduler")
     sched.start()
 except KeyboardInterrupt:
     print("Scheduler interrupted")
